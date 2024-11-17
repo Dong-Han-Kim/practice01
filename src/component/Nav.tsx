@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from 'react';
+import { useRef } from 'react';
 import './style/Nav.css';
 
 export default function Nav() {
