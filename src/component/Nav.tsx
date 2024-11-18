@@ -1,21 +1,24 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './style/Nav.css';
 
 export default function Nav() {
 	const btnRef = useRef<HTMLDivElement | null>(null);
 	const navRef = useRef<HTMLDivElement | null>(null);
+	const [show, setShow] = useState(false);
 
 	function btnHandler() {
-		const btn = btnRef.current;
-		const nav = navRef.current;
-		if (btn?.classList.contains('on') || nav?.classList.contains('on')) {
-			btn?.classList.remove('on');
-			nav?.classList.remove('on');
-		} else {
-			btn?.classList.add('on');
-			nav?.classList.add('on');
-		}
+		setShow((prevShow) => {
+			const nextShow = !prevShow;
+			btnRef.current?.classList.toggle('on', nextShow);
+			navRef.current?.classList.toggle('on', nextShow);
+
+			return nextShow;
+		});
 	}
+
+	useEffect(() => {
+		document.body.style.overflow = show ? 'hidden' : 'unset';
+	}, [show]);
 
 	return (
 		<nav ref={navRef}>

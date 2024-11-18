@@ -2,7 +2,7 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	align-items: center;
+	align-items: start;
 	padding: 50px;
 	color: #3e372f;
 	position: relative;
@@ -17,7 +17,7 @@ footer {
 	font-family: 'Cafe24ClassicType-Regular';
 	font-optical-sizing: auto;
 	font-weight: 700;
-	font-size: 45px;
+	font-size: 2.344vw;
 	margin-bottom: 35px;
 }
 
@@ -30,6 +30,7 @@ footer {
 	grid-row: 1/2;
 	font-family: 'Noto Sans', sans-serif;
 	height: 100%;
+	text-align: center;
 }
 .ft_center_title {
 	font-size: 30px;
@@ -74,4 +75,66 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+}
+
+@media (max-width: 1024px) {
+	.ft_logo,
+	.ft_center_title,
+	.ft_right_title {
+		font-size: 20px;
+	}
+
+	#ft_left,
+	#ft_center,
+	#ft_right {
+		font-size: 14px;
+	}
+
+	#ft_bottom {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 768px) {
+	#ft_left,
+	#ft_center,
+	#ft_right {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 560px) {
+	footer {
+		padding: 15px;
+	}
+	.ft_logo {
+		margin-bottom: 20px;
+	}
+	.ft_logo,
+	.ft_center_title,
+	.ft_right_title {
+		font-size: 18px;
+	}
+
+	#ft_left,
+	#ft_center,
+	#ft_right {
+		font-size: 10px;
+	}
+	#ft_bottom {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 375px) {
+	.ft_logo,
+	.ft_center_title,
+	.ft_right_title {
+		font-size: 14px;
+	}
+	#ft_left,
+	#ft_center,
+	#ft_right {
+		font-size: 8px;
+	}
 }
