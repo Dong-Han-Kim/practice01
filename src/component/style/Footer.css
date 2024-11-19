@@ -128,6 +128,19 @@ footer {
 	}
 }
 
+@media (max-width: 480px) {
+	.ft_logo,
+	.ft_center_title,
+	.ft_right_title {
+		font-size: 12px;
+	}
+	#ft_left,
+	#ft_center,
+	#ft_right {
+		font-size: 8px;
+	}
+}
+
 @media (max-width: 375px) {
 	.ft_logo,
 	.ft_center_title,
