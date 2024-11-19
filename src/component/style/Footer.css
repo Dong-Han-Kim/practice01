@@ -48,6 +48,7 @@ footer {
 }
 
 #ft_right {
+	font-family: 'Noto Sans', sans-serif;
 	text-align: right;
 	grid-column: 3/4;
 	grid-row: 1/2;
@@ -131,7 +132,7 @@ footer {
 	.ft_logo,
 	.ft_center_title,
 	.ft_right_title {
-		font-size: 14px;
+		font-size: 10px;
 	}
 	#ft_left,
 	#ft_center,
