@@ -14,9 +14,10 @@ footer {
 }
 
 .ft_logo {
-	font-family: 'Cafe24ClassicType-Regular';
+	/* font-family: 'Cafe24ClassicType-Regular'; */
+	font-family: 'nanummyeongjo';
 	font-optical-sizing: auto;
-	font-weight: 700;
+	font-weight: 900;
 	font-size: 2.344vw;
 	margin-bottom: 35px;
 }

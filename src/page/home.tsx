@@ -4,8 +4,41 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useEffect, useRef } from 'react';
 
 export default function Home() {
+	const ulRef = useRef<HTMLUListElement | null>(null);
+	const liRef = useRef<HTMLLIElement[]>([]);
+	console.log(liRef);
+
+	useEffect(() => {
+		if (!ulRef.current) return;
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					liRef.current.forEach((li) => {
+						li.classList.add('visible');
+					});
+				} else {
+					liRef.current.forEach((li) => {
+						li.classList.remove('visible');
+					});
+				}
+			},
+			{ threshold: 0.1 }
+		);
+		if (ulRef.current) {
+			observer.observe(ulRef.current);
+		}
+
+		return () => {
+			if (ulRef.current) {
+				observer.unobserve(ulRef.current);
+			}
+		};
+	}, []);
+
 	return (
 		<>
 			<section id="section0">
@@ -22,10 +55,16 @@ export default function Home() {
 			</section>
 			<section id="section1">
 				<div className="img_menu">
-					<ul>
-						{imgMenu.map((el) => {
+					<ul ref={ulRef}>
+						{imgMenu.map((el, index) => {
 							return (
-								<li key={el.id}>
+								<li
+									key={el.id}
+									ref={(el) => {
+										if (el) {
+											liRef.current[index] = el;
+										}
+									}}>
 									<a href="#">
 										<img src={el.src} alt="" />
 										<div className="text_wrap">

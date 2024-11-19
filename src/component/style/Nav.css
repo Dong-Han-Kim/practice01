@@ -7,8 +7,10 @@ nav {
 	color: #3e372f;
 }
 .logo {
-	font-family: 'Cafe24ClassicType-Regular';
+	/* font-family: 'Cafe24ClassicType-Regular'; */
+	font-family: 'nanummyeongjo';
 	/* font-size: 50px; */
+	font-weight: 900;
 }
 .logo a {
 	color: #3e372f;
